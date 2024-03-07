@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Codewars Tasks</title>
+  </head>
+  <body>
+    <h1>CodeWars</h1>
+    <script src="./script.js"></script>
+    <script>
+      function howMuchILoveYou(nbPetals) {
+        const answersArray = [
+          "I love you",
+          "a little",
+          "a lot",
+          "passionately",
+          "madly",
+          "not at all",
+        ];
+
+        switch (nbPetals % 6) {
+          case 1:
+            return answersArray[0];
+          case 2:
+            return answersArray[1];
+          case 3:
+            return answersArray[2];
+          case 4:
+            return answersArray[3];
+          case 5:
+            return answersArray[4];
+          case 0:
+            return answersArray[5];
+        }
+      }
+      const attempt = howMuchILoveYou(1);
+      console.log(attempt);
+    </script>
+  </body>
+</html>
