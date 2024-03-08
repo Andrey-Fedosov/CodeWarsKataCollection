@@ -63,3 +63,79 @@ function dontGiveMeFive(start, end) {
 
 //* other user variant
 //!  should add some other user variants
+
+//^ 3. Create a method each_cons that accepts a list and a number n, and returns cascading subsets of the list of size n, like so:
+
+//* my variant
+
+function eachCons(array, n) {
+  let result = [];
+  for (let i = 0; i <= array.length - n; i++) {
+    result.push(array.slice(i, i + n));
+  }
+  return result;
+}
+
+//* other user variant
+//!  should add some other user variants
+
+//^ 4 the function will take a string as its argument, and return a string with every word replaced by the explanation to everything, according to Freud. Note that an empty string, or no arguments, should return an empty string.
+
+//* my variant
+function toFreud(string) {
+  if (string.length === 0) {
+    return "";
+  } else {
+    let arrayOfSex = [];
+    const amountsForRepeat = string.split(" ").length;
+    for (let i = 0; i < amountsForRepeat; i++) {
+      arrayOfSex.push("sex");
+    }
+
+    return arrayOfSex.join(" ");
+  }
+}
+
+//* other user variants
+const toFreud = (str) =>
+  str === ""
+    ? ""
+    : str
+        .split(" ")
+        .map((e) => "sex")
+        .join(" ");
+
+//^ 5 calculate the volume of a cuboid with three values: the length, width and height of the cuboid.
+
+//* my variant
+class Kata {
+  static getVolumeOfCuboid(length, width, height) {
+    return length * width * height;
+  }
+}
+
+//^ 7
+
+//* my variant
+function magicSum(numbers) {
+  const arrayToReduce = numbers
+    .filter((el) => el % 2 !== 0)
+    .map((el) => el.toString())
+    .filter((el) => el.includes("3"));
+  return arrayToReduce.length === 0
+    ? 0
+    : arrayToReduce.length === 1
+    ? Number(arrayToReduce[0])
+    : arrayToReduce.reduce((a, c) => Number(c) + Number(a));
+}
+
+//* other user variant
+//!  should add some other user variants
+
+//---------------------------------------
+//^ 6
+
+//* my variant
+
+//* other user variant
+//!  should add some other user variants
