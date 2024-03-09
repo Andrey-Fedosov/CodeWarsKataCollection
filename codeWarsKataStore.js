@@ -195,7 +195,7 @@ function countDevelopers(list) {
 //* other user variant
 //!  should add some other user variants
 
-//^ 6
+//^ 3
 
 //* my variant
 function findOddNames(list) {
@@ -219,7 +219,57 @@ function findOddNames(list) {
 //* other user variant
 //!  should add some other user variants
 
+//& 10.03.2024
+//^ 1 Your task is to return an object (associative array in PHP, table in COBOL) which includes the count of each coding language represented at the meetup.
+
+//* my variant
+function countLanguages(list) {
+  let result = {};
+
+  for (let el of list) {
+    let keyArray = Object.keys(result);
+    if (keyArray.includes(el.language) === false) {
+      result[el.language] = 1;
+    } else {
+      result[el.language]++;
+    }
+  }
+
+  return result;
+}
+
+//* other user variant
+//!  should add some other user variants
+
+//^ 2
+//* my variant
+function likes(names) {
+  if (names.length === 0) {
+    return `no one likes this`;
+  }
+  if (names.length === 1) {
+    return `${[...names]} likes this`;
+  }
+  if (names.length === 2) {
+    let nameSection = names.join(" and ");
+    return `${nameSection} like this`;
+  }
+  if (names.length === 3) {
+    let firstName = names[0];
+    nameSection = names.slice(1).join(" and ");
+    return `${firstName}, ${nameSection} like this`;
+  }
+  if (names.length >= 4) {
+    nameSection = names.slice(0, 2).join(", ");
+    return `${nameSection} and ${names.length - 2} other like this`;
+  }
+}
+
+//* other user variant
+//!  should add some other user variants
+
 //---------------------------------------
+//& 09.03.2024
 //^ 6
 
 //* my variant
