@@ -132,6 +132,93 @@ function magicSum(numbers) {
 //* other user variant
 //!  should add some other user variants
 
+//^ 8
+
+//* my variant
+function howMuchWater(water, load, clothes) {
+  if (clothes > 2 * load) {
+    return "Too much clothes";
+  }
+  if (clothes < load) {
+    return "Not enough clothes";
+  }
+  return +(water * 1.1 ** (clothes - load)).toFixed(2);
+}
+
+//* other user variant
+//!  should add some other user variants
+
+//^ 6 write a function that adds the username property to each object in the input array:  detailed task: https://www.codewars.com/kata/582a53ed261c2af9d200018c/train/javascript
+
+//* my variant
+function addUsername(list) {
+  const createUserName = (user) => {
+    let userName = `${user.firstName.toLowerCase()}${user.lastName[0].toLowerCase()}${
+      new Date().getFullYear() - user.age
+    }`;
+    return userName;
+  };
+
+  list.map((el) => (el.username = createUserName(el)));
+
+  return list;
+}
+
+//* other user variant
+//!  should add some other user variants
+
+//& 09.03.2024
+//^ 1 Your task is to return an array where each object will have a new property 'greeting' with the following string value: Hi < firstName here >, what do you like the most about < language here >?
+
+//* my variant
+
+function greetDevelopers(list) {
+  list.map(
+    (el) =>
+      (el.greeting = `Hi ${el.firstName}, what do you like the most about ${el.language}?`)
+  );
+  console.log(list);
+  return list;
+}
+
+//* other user variant
+//!  should add some other user variants
+
+//^ 2 Your task is to return the number of JavaScript developers coming from Europe.
+
+function countDevelopers(list) {
+  return list.filter(
+    (el) => el.continent === "Europe" && el.language === "JavaScript"
+  ).length;
+}
+
+//* other user variant
+//!  should add some other user variants
+
+//^ 6
+
+//* my variant
+function findOddNames(list) {
+  const checkForOdd = (name) => {
+    return (
+      name
+        .split("")
+        .map((el) => el.charCodeAt(0))
+        .reduce((a, c) => a + c) % 2
+    );
+  };
+
+  list.map((el) => (el.charCodeOddIndicator = checkForOdd(el.firstName)));
+
+  const filteredList = list.filter((el) => el.charCodeOddIndicator === 1);
+  filteredList.map((el) => delete el.charCodeOddIndicator);
+
+  return filteredList;
+}
+
+//* other user variant
+//!  should add some other user variants
+
 //---------------------------------------
 //^ 6
 

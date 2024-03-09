@@ -9,14 +9,50 @@
     <h1>CodeWars</h1>
     <script src="./script.js"></script>
     <script>
-      function eachCons(array, n) {
-        let result = [];
-        for (let i = 0; i <= array.length - n; i++) {
-          result.push(array.slice(i, i + 2));
-        }
-        return result;
+      let list1 = [
+        {
+          firstName: "Mark",
+          lastName: "G.",
+          country: "Scotland",
+          continent: "Europe",
+          age: 22,
+          language: "JavaScript",
+        },
+        {
+          firstName: "Victoria",
+          lastName: "T.",
+          country: "Puerto Rico",
+          continent: "Americas",
+          age: 30,
+          language: "Python",
+        },
+        {
+          firstName: "Emma",
+          lastName: "B.",
+          country: "Norway",
+          continent: "Europe",
+          age: 19,
+          language: "Clojure",
+        },
+      ];
+      function findOddNames(list) {
+        const checkForOdd = (name) => {
+          return (
+            name
+              .split("")
+              .map((el) => el.charCodeAt(0))
+              .reduce((a, c) => a + c) % 2
+          );
+        };
+
+        list.map((el) => (el.charCodeOddIndicator = checkForOdd(el.firstName)));
+
+        const filteredList = list.filter((el) => el.charCodeOddIndicator === 1);
+        filteredList.map((el) => delete el.charCodeOddIndicator);
+
+        return filteredList;
       }
-      const attempt = eachCons([3, 5, 8, 13], 2);
+      const attempt = findOddNames(list1);
       console.log(attempt);
     </script>
   </body>
