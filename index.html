@@ -11,67 +11,37 @@
     <script>
       let list1 = [
         {
-          firstName: "Mark",
-          lastName: "G.",
-          country: "Scotland",
+          firstName: "Daniel",
+          lastName: "J.",
+          country: "Aruba",
+          continent: "Americas",
+          age: 42,
+          language: "JavaScript",
+        },
+        {
+          firstName: "Kseniya",
+          lastName: "T.",
+          country: "Belarus",
           continent: "Europe",
           age: 22,
           language: "JavaScript",
         },
         {
-          firstName: "Victoria",
-          lastName: "T.",
-          country: "Puerto Rico",
-          continent: "Americas",
-          age: 30,
-          language: "C",
-        },
-        {
-          firstName: "Emma",
-          lastName: "B.",
-          country: "Norway",
+          firstName: "Hanna",
+          lastName: "L.",
+          country: "Hungary",
           continent: "Europe",
-          age: 19,
-          language: "Ruby",
-        },
-        {
-          firstName: "Noah",
-          lastName: "M.",
-          country: "Switzerland",
-          continent: "Europe",
-          age: 19,
-          language: "C",
-        },
-        {
-          firstName: "Anna",
-          lastName: "R.",
-          country: "Liechtenstein",
-          continent: "Europe",
-          age: 52,
+          age: 65,
           language: "JavaScript",
         },
-        {
-          firstName: "Ramon",
-          lastName: "R.",
-          country: "Paraguay",
-          continent: "Americas",
-          age: 29,
-          language: "Ruby",
-        },
-        {
-          firstName: "George",
-          lastName: "B.",
-          country: "England",
-          continent: "Europe",
-          age: 81,
-          language: "C",
-        },
       ];
-      function getAverageAge(list) {
-        return (averageAge =
-          list.map((el) => el.age).reduce((a, c) => a + c) / list.length);
+
+      function isLanguageDiverse(list) {
+        let jsParticipants = list.filter((el) => el.language === `JavaScript`);
       }
-      const attempt = getAverageAge(list1);
+
+      const attempt = isSameLanguage(list1);
+
       // const attempt = likes(["Jacob", "Alex", "Mark", "semen"]);
       console.log(attempt);
     </script>
